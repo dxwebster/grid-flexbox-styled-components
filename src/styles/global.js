@@ -14,6 +14,9 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text};
 }
 
 aside,

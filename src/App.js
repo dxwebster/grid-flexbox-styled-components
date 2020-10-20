@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './styles/global';
+import Header from './components/Header';
 
-import PostImg from './assets/background.jpg';
+import Post1 from './assets/post1.svg';
+import Post2 from './assets/post2.svg';
+import Post3 from './assets/post3.svg';
 
-import { Container, GridWrapper, Header, Aside, Background, Article, Footer } from './styles';
+import { Container, GridWrapper, Aside, Background, Article, Footer } from './styles';
+
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
 
 function App() {
+  const [theme, setTheme] = useState(light);
+
+  const handleToggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light);
+    console.log(theme.title);
+  };
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header>
-        <div>
-          <span>a</span>
-          <ul>
-            <li>About Us</li>
-            <li>Services</li>
-            <li>Contact Us</li>
-            <li className="get-started">Get Started</li>
-          </ul>
-        </div>
-      </Header>
+      <Header handleToggleTheme={handleToggleTheme} />
       <Container>
         <GridWrapper>
           <Aside>
-            <h1>Web Design</h1>
-            <h3>Landing Page</h3>
+            <h1>Front end</h1>
+            <h3>development</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit a et rerum vitae eum deleniti, consequatur quo. Ipsa quos eveniet totam quaerat, velit cumque! Qui
               commodi nam aliquid velit corrupti.
@@ -42,17 +46,17 @@ function App() {
             </p>
             <div>
               <span>
-                <img src={PostImg} alt="Post" />
+                <img src={Post1} alt="Post" />
                 <h3>Algum título</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, rerum eos aliquam.</p>
               </span>
               <span>
-                <img src={PostImg} alt="Post" />
+                <img src={Post2} alt="Post" />
                 <h3>Algum título</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, rerum eos aliquam.</p>
               </span>
               <span>
-                <img src={PostImg} alt="Post" />
+                <img src={Post3} alt="Post" />
                 <h3>Algum título</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, rerum eos aliquam.</p>
               </span>
@@ -66,7 +70,7 @@ function App() {
         <i className="fab fa-facebook-f"></i>
         <span className="sign-off">Created by Adriana Lima</span>
       </Footer>
-    </>
+    </ThemeProvider>
   );
 }
 
