@@ -9,9 +9,8 @@ Esse é um estudo de Grid,Flexbox, Styled Components e Toggle Theme do React.
 
 🎨 Design por [Adriana Lima](https://github.com/dxwebster)
 
-<br>
-
-Inspirado no [post](https://medium.com/better-programming/how-i-use-css-grid-and-flexbox-to-create-a-one-page-website-part-2-e575edb422fe)
+Inspirado no post[
+How I Use CSS Grid and Flexbox to Create a One-Page Website](https://medium.com/better-programming/how-i-use-css-grid-and-flexbox-to-create-a-one-page-website-part-2-e575edb422fe)
 
 </h5>
 
